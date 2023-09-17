@@ -183,6 +183,12 @@
         <option value="expanded">Expanded</option>
         <option value="collapsed">Collapsed</option>
       </select>
+
+      <label for="ui_layout">Groups layout:</label>
+      <select id="ui_layout" v-model="sync.ui_layout">
+        <option value="row">Row</option>
+        <option value="column">Column</option>
+      </select>
     </section>
 
     <hr />
