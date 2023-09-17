@@ -64,6 +64,12 @@ export const SYNC_DEF = {
     is: anEnum("expanded", "collapsed"),
   },
 
+  // Tab group layout flex-direction row or column
+  ui_layout: {
+    default: "row",
+    is: anEnum("row", "column"),
+  },
+
   // How big should the spacing/fonts be?
   ui_metrics: {
     default: "normal",

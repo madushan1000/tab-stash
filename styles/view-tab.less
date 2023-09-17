@@ -1,8 +1,22 @@
 // Mods for when in tab view -- uses a multi-column display format
 
+&[data-layout="row"] {
+  --flex-direction: row;
+  --li-flex: 1 1 25rem;
+  --column-display: grid;
+  --li-flex-basis: 40rem;
+}
+
+&[data-layout="column"] {
+  --flex-direction: column;
+  --li-flex: none;
+  --column-display: flex;
+  --li-flex-basis: auto;
+}
+
 .forest {
   display: flex;
-  flex-direction: row;
+  flex-direction: var(--flex-direction);
   flex-wrap: wrap;
   align-items: stretch;
   // Same width and height since this is a grid
@@ -11,7 +25,7 @@
   column-gap: var(--page-pw);
 
   & > li {
-    flex: 1 1 25rem;
+    flex: var(--li-flex);
     margin: 0; // Handled by row/column gap
     background-color: var(--group-bg);
     box-shadow: var(--shadow);
@@ -44,13 +58,13 @@
   }
 
   &.one-column {
-    display: grid;
+    display: var(--column-display);
     grid-template-columns: 1fr minmax(0, 40rem) 1fr;
     column-gap: 0;
 
     & > li {
       grid-column: 2;
-      flex-basis: 40rem;
+      flex-basis: var(--li-flex-basis);
     }
   }
 }

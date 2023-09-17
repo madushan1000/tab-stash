@@ -50,6 +50,7 @@ export default function launch<
     function updateStyle(opts: Options.SyncModel) {
       document.documentElement.dataset!.metrics = opts.state.ui_metrics;
       document.documentElement.dataset!.theme = opts.state.ui_theme;
+      document.documentElement.dataset!.layout = opts.state.ui_layout;
     }
     updateStyle(plat.options.sync);
     plat.options.sync.onChanged.addListener(updateStyle);
