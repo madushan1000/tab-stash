@@ -18,6 +18,12 @@
       "strict_min_version": "78.0"
     }
   },
+  "chrome_url_overrides": {
+    "newtab": "stash-list.html"
+  },
+  "chrome_settings_overrides": {
+    "homepage": "stash-list.html"
+  },
   "permissions": [
     "sessions",
     "tabs",
