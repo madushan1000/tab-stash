@@ -155,7 +155,8 @@
       v-if="!isRenaming"
       class="forest-title editable"
       :title="tooltip"
-      @click.stop="isRenaming = true"
+      @click.middle.prevent.stop="isRenaming = true"
+      @click.prevent.stop="toggleCollapsed"
       >{{ title }}</span
     >
     <async-text-input
